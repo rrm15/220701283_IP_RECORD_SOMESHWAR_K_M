@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EB Recruitment</title>
+  <style>
+    /* Sleek purple-themed styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .form-container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 400px;
+    }
+    h1 {
+      text-align: center;
+      color: #5a31f4;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #5a31f4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #3a21a1;
+    }
+    .error {
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>EB Recruitment</h1>
+    <form id="ebRecruitmentForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required><br>
+      <input type="email" id="email" name="email" placeholder="Your Email" required><br>
+      <input type="tel" id="phone" name="phone" placeholder="Your Phone" required><br>
+      <input type="text" id="experience" name="experience" placeholder="Your Experience" required><br>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea><br>
+      <button type="submit">Submit</button>
+      <div class="error" id="errorMsg">Please fill out all fields correctly.</div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('ebRecruitmentForm').addEventListener('submit', async function (event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const experience = document.getElementById('experience').value;
+      const message = document.getElementById('message').value;
+
+      if (!name || !email || !phone || !experience || !message) {
+        document.getElementById('errorMsg').style.display = 'block';
+        document.getElementById('errorMsg').style.display = 'block';
+        return;
+      }
+
+      try {
+        const response = await fetch('http://localhost:5000/eb-recruitment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, phone, experience, message })
+        });
+
+        if (response.ok) {
+          alert('Form submitted successfully');
+          document.getElementById('ebRecruitmentForm').reset();
+        } else {
+          alert('Error submitting form');
+        }
+      } catch (error) {
+        alert('Error submitting form');
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+</html>
