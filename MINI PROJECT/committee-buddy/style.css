@@ -1,0 +1,163 @@
+/* General Body Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Header Navigation */
+header {
+  background-color: #5D3FD3;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Banner Styles */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  text-align: center;
+  color: white;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-text h1 {
+  font-size: 3rem;
+}
+
+.banner-text p {
+  font-size: 1.5rem;
+}
+
+.cta-button {
+  background-color: #ff5a00;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Committees Section */
+.committees {
+  background-color: #ffffff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.committees h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #5D3FD3;
+}
+
+.committee-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.committee-card {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem;
+  width: 22%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.committee-card h3 {
+  color: #5D3FD3;
+  margin-bottom: 1rem;
+}
+
+.committee-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: #f4f4f4;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #5D3FD3;
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.testimonial-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem;
+  width: 30%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card h4 {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background-color: #5D3FD3;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .committee-card, .testimonial-card {
+      width: 80%;
+      margin: 1rem auto;
+  }
+}
